@@ -1,8 +1,6 @@
-name: Base (Ubuntu:latest)
+name: Android Payload Extract
 on:
   push:
-    paths:
-      - "base/*"
   schedule:
     - cron: 0 0 * * */1
 jobs:
@@ -29,7 +27,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          context: base/
           tags: |
             sirherobrine23/payloadandroidextract:latest
             sirherobrine23/payloadandroidextract:${{ github.run_id }}
